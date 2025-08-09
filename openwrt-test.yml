@@ -1,0 +1,6 @@
+- name: Test connection to OpenWrt
+  hosts: openwrt
+  gather_facts: no
+  tasks:
+    - name: Ping the OpenWrt host  
+      ansible.builtin.ping:  
