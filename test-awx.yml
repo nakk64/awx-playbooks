@@ -1,0 +1,14 @@
+# test-awx.yml
+- name: Test AWX connection
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ping the host
+      ansible.builtin.ping:
+
+    - name: Print hostname
+      ansible.builtin.command: hostname
+      register: host_output
+
+    - debug:
+        var: host_output.stdout
